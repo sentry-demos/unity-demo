@@ -9,21 +9,9 @@ public class EventCrash : MonoBehaviour
 
     public void AssertFalse() => Assert.AreEqual(true, false);
 
-    public void throwNullException(int total)
+    public void throwNullException()
     {
-        int x = 4; 
-        int y = 3;
-        int temp = 0;
-
-        x = temp; 
-        x = y;
-        y = temp; 
-
         throw null;
-
-        temp = total; 
-
-        // return 0;
     }
 
     public void ThrowExceptionAndCatch()
