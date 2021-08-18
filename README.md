@@ -17,20 +17,15 @@ The **Official Sentry Documentation** for Unity is at https://docs.sentry.io/pla
 
 Download Unity Hub using this link https://unity3d.com/get-unity/download 
 
-if you dont have licesne choose your Unity and go to individul to get the free version 
-
-install the proper unity version 
-
+You'll be prompoted to create an account if you want the free version.
 
 ## Configuration 
 
-For this demo Sentry is installed but I'll show you how you can easily do that from Unity's package manager. 
+For this demo Sentry is installed but you can easily install Sentry package from Unity's package manager using this git url: https://docs.sentry.io/platforms/unity/
 
 <img src="README/package-manager.png">
 
 You can now access Sentry's Configuration Window under *Unity->Tools->Sentry*
-
-
 
 ### DSN key
 
@@ -47,7 +42,7 @@ Sentry can be configured via the Sentry configruation window or [programatically
 
 ## Expected Behavior 
 
-Welcome to Senty's ground-breaking game, this games consists of multiple buttons 
+Welcome to Senty's unity game!
 
 **Play** calls `throwNullException()`
 
@@ -58,8 +53,6 @@ Welcome to Senty's ground-breaking game, this games consists of multiple buttons
 more about the functions can be found here: https://github.com/getsentry/sentry-unity/tree/main/samples/unity-of-bugs
 
 
-
-
-## Gif
+## GIF
 
 ![gif](README/unity-demo.gif)
