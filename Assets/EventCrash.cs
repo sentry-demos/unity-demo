@@ -7,13 +7,10 @@ using Sentry;
 public class EventCrash : MonoBehaviour
 {
 
-    public void AssertFalse() => Assert.AreEqual(true, false);
+    public GameObject crashReport; 
+    public Sentry.SentryId eventID;
 
-    public void throwNullException()
-    {
-        throw null;
-    }
-
+    //play button error
     public void ThrowExceptionAndCatch()
     {
         Debug.Log("Throwing an instance of 🐛 CustomException!");
@@ -24,23 +21,48 @@ public class EventCrash : MonoBehaviour
         }
         catch (Exception e)
         {
+            string randomEmail = RandomString();
+            Debug.Log(randomEmail);
+            SentrySdk.ConfigureScope(scope => 
+            {
+                scope.User = new User { 
+                    Email = randomEmail
+                };
+            });
+            eventID = SentrySdk.CaptureException(e);
+            // Debug.Log(eventID);
             Debug.LogException(e);
+            //Sleep for 4 secs
+            Invoke("crashReports", 4);
         }
     }
-
-    private void MethodA() => throw new InvalidOperationException("Exception from A lady beetle 🐞");
-    private void MethodB() => MethodA();
+    
     public void ExceptionToString()
     {
-        Debug.Log("Throw/Catch, Debug.LogError: Exception.ToString!");
-
         try
         {
-            MethodB();
+            throw new InvalidOperationException("Exception from A lady beetle 🐞");
         }
         catch (Exception e)
         {
-            Debug.LogError($"ExceptionToString:\n{e}");
+            Debug.Log(e);
         }
+    }
+
+    public void crashReports() { 
+        crashReport.SetActive(true);
+    }
+
+    private static string RandomString() { 
+        var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var stringChars = new char[8];
+        var random = new System.Random();
+
+        for (int i = 0; i < stringChars.Length; i++)
+        {
+            stringChars[i] = chars[random.Next(chars.Length)];
+        }
+        var finalString = new String(stringChars) + "@yahoo.com";
+        return finalString;
     }
 }

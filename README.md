@@ -13,7 +13,7 @@ The **Official Sentry Documentation** for Unity is at https://docs.sentry.io/pla
 | unity version |   2020.3.15f2  |
 | macOS         |  Big Sur 11.4  |
 
-<ins>Unity</ins>
+### Unity
 
 Download Unity Hub using this link https://unity3d.com/get-unity/download 
 
@@ -51,6 +51,7 @@ Welcome to Senty's unity game!
 **Exit** calls `ExceptionToString()`
 
 more about the functions can be found here: https://github.com/getsentry/sentry-unity/tree/main/samples/unity-of-bugs
+
 
 
 ## GIF
