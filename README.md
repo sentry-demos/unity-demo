@@ -44,15 +44,12 @@ Sentry can be configured via the Sentry configruation window or [programatically
 
 Welcome to Senty's unity game!
 
-**Play** calls `throwNullException()`
+**Play** -> C# throw/try/catch and `Debug.LogError`
 
-**Settings** navigates to settings menu
+**Settings** -> Navigates to Settings Menu
 
-**Exit** calls `ExceptionToString()`
-
-more about the functions can be found here: https://github.com/getsentry/sentry-unity/tree/main/samples/unity-of-bugs
-
-
+**Exit** -> C# throw null- undhandled by user code
+ 
 
 ## GIF
 

@@ -22,7 +22,7 @@ public class EventCrash : MonoBehaviour
         catch (Exception e)
         {
             string randomEmail = RandomString();
-            Debug.Log(randomEmail);
+            
             SentrySdk.ConfigureScope(scope => 
             {
                 scope.User = new User { 
@@ -30,23 +30,16 @@ public class EventCrash : MonoBehaviour
                 };
             });
             eventID = SentrySdk.CaptureException(e);
-            // Debug.Log(eventID);
-            Debug.LogException(e);
-            //Sleep for 4 secs
-            Invoke("crashReports", 4);
+            Debug.LogError(e);
+            //Sleep for 3 secs
+            Invoke("crashReports", 3);
         }
     }
     
-    public void ExceptionToString()
+    public void throwNull()
     {
-        try
-        {
-            throw new InvalidOperationException("Exception from A lady beetle 🐞");
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e);
-        }
+        Debug.Log("Calling throwNull() function");
+        throw null;
     }
 
     public void crashReports() { 
@@ -58,11 +51,11 @@ public class EventCrash : MonoBehaviour
         var stringChars = new char[8];
         var random = new System.Random();
 
-        for (int i = 0; i < stringChars.Length; i++)
-        {
+        for (int i = 0; i < stringChars.Length; i++){
             stringChars[i] = chars[random.Next(chars.Length)];
         }
         var finalString = new String(stringChars) + "@yahoo.com";
+        Debug.LogWarning("Setting User: " + finalString);
         return finalString;
     }
 }
