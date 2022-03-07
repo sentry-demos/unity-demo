@@ -631,7 +631,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 118906284}
-        m_TargetAssemblyTypeName: EventCrash, Assembly-CSharp
+        m_TargetAssemblyTypeName: UserFeedback, Assembly-CSharp
         m_MethodName: enterUserFeedback
         m_Mode: 1
         m_Arguments:
@@ -701,10 +701,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 118906279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 710180ada506449a9808ebbe1c5a3f65, type: 3}
+  m_Script: {fileID: 11500000, guid: 51b5384c6e33b46f580dbabb5d7cccf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crashReport: {fileID: 0}
+  nullException: {fileID: 1050293126}
 --- !u!1 &119542014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,13 +1809,13 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 118906279}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 118906284}
+        m_TargetAssemblyTypeName: UserFeedback, Assembly-CSharp
+        m_MethodName: getName
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2175,36 +2175,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
---- !u!1 &575811534
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 575811535}
-  m_Layer: 0
-  m_Name: dummy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &575811535
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575811534}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -443.54922, y: 293.684, z: -8353.043}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &597126995
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,6 +2591,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746040674}
   m_CullTransparentMesh: 1
+--- !u!1 &753643000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 753643001}
+  m_Layer: 0
+  m_Name: empty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &753643001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753643000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -443.54922, y: 293.684, z: -8353.043}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &767294970
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,7 +3381,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 968235234}
         m_TargetAssemblyTypeName: EventCrash, Assembly-CSharp
-        m_MethodName: ExceptionToString
+        m_MethodName: throwNull
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3441,7 +3441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710180ada506449a9808ebbe1c5a3f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crashReport: {fileID: 0}
+  crashReport: {fileID: 753643000}
 --- !u!1 &968559134
 GameObject:
   m_ObjectHideFlags: 0
@@ -4585,9 +4585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b5384c6e33b46f580dbabb5d7cccf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
-  email: 
-  info: 
+  nullException: {fileID: 0}
 --- !u!1 &1405155828
 GameObject:
   m_ObjectHideFlags: 0
@@ -5989,9 +5987,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 118906284}
-        m_TargetAssemblyTypeName: EventCrash, Assembly-CSharp
+        m_TargetAssemblyTypeName: UserFeedback, Assembly-CSharp
         m_MethodName: getInfo
-        m_Mode: 5
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6684,9 +6682,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 118906284}
-        m_TargetAssemblyTypeName: EventCrash, Assembly-CSharp
+        m_TargetAssemblyTypeName: UserFeedback, Assembly-CSharp
         m_MethodName: getEmail
-        m_Mode: 5
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

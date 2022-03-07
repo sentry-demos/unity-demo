@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.IO;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Assertions;
 using Sentry;
+
 public class EventCrash : MonoBehaviour
 {
 
     public GameObject crashReport; 
     public Sentry.SentryId eventID;
+
 
     //play button error
     public void ThrowExceptionAndCatch()
@@ -38,6 +42,12 @@ public class EventCrash : MonoBehaviour
     
     public void throwNull()
     {
+        ScreenCapture.CaptureScreenshot(@"/Users/dannychakra/sc.png");
+        SentrySdk.ConfigureScope(scope => { 
+            
+            scope.AddAttachment(@"/Users/dannychakra/sc.png");
+        });
+        Debug.Log("Adding attachment to Sentry");
         Debug.Log("Calling throwNull() function");
         throw null;
     }
