@@ -8,7 +8,7 @@ The **Official Sentry Documentation** for Unity is at https://docs.sentry.io/pla
 ## Setup
 | dependency    |    version     |
 | ------------- | :------------: |
-| sentry-unity  |     0.4.3      |
+| sentry-unity  |     0.11.0      |
 | unity hub     |     2.4.5      |
 | unity version |   2020.3.15f2  |
 | macOS         |  Big Sur 11.4  |
