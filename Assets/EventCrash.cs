@@ -33,8 +33,9 @@ public class EventCrash : MonoBehaviour
                     Email = randomEmail
                 };
             });
-            eventID = SentrySdk.CaptureException(e);
-            Debug.LogError(e);
+
+            Debug.LogError("Ooops something went wrong!");
+            //Debug.LogError("Error 3");
             //Sleep for 3 secs
             Invoke("crashReports", 3);
         }
