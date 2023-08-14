@@ -21,7 +21,7 @@ public class EventCrash : MonoBehaviour
 
         try
         {
-            throw new Exception("Custom bugs 🐛🐛🐛🐛.");
+            throw new Exception("Custom bugs 🐛🐛🐛.");
         }
         catch (Exception e)
         {
@@ -34,8 +34,7 @@ public class EventCrash : MonoBehaviour
                 };
             });
 
-            Debug.LogError("Ooops something went wrong!");
-            //Debug.LogError("Error 3");
+            SentrySdk.CaptureException(e);
             //Sleep for 3 secs
             Invoke("crashReports", 3);
         }
