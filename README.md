@@ -1,3 +1,4 @@
+# DEPRECATED in favor of https://github.com/sentry-demos/unity
 
 ## Overviews
 
